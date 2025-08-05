@@ -105,5 +105,5 @@ OUTPUT_PATH="/home/$USER_NAME/$PROJECT_NAME/outputs/output.ply"
 tmux send-keys -t $SESSION_NAME "./opensplat \"$COLMAP_PATH\" \\
 -n 120000 \\
 --save-every 10000 \\
-
 -o \"$OUTPUT_PATH\"" C-m
+
