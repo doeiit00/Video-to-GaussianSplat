@@ -58,7 +58,7 @@ tmux send-keys -t $SESSION_NAME "module load devel/cuda" C-m
 tmux send-keys -t $SESSION_NAME "module load cs/colmap" C-m
 
 # ffmpeg Befehl
-tmux send-keys -t $SESSION_NAME "ffmpeg -i \"$VIDEO_FILE\" -q:v 1 -vf 'select=not(mod(n\\,3))' -vsync vfr images/frame_%04d.jpg" C-m
+tmux send-keys -t $SESSION_NAME "ffmpeg -i \"$VIDEO_FILE\" -q:v 1 -vf 'select=not(mod(n\\,3))' -fps_mode vfr images/frame_%04d.jpg" C-m
 
 # COLMAP feature_extractor
 tmux send-keys -t $SESSION_NAME "colmap feature_extractor \\
@@ -105,4 +105,5 @@ OUTPUT_PATH="/home/$USER_NAME/$PROJECT_NAME/outputs/output.ply"
 tmux send-keys -t $SESSION_NAME "./opensplat \"$COLMAP_PATH\" \\
 -n 120000 \\
 --save-every 10000 \\
+
 -o \"$OUTPUT_PATH\"" C-m
